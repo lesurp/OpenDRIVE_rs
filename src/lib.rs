@@ -31,7 +31,7 @@ impl Validate for OpenDRIVE {}
 pub mod open_drive {
     use super::*;
 
-    #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
+    #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
     #[yaserde()]
     pub struct HeaderType {
         #[yaserde(rename = "geoReference")]
@@ -132,7 +132,7 @@ pub mod open_drive {
     pub mod road_type {
         use super::*;
 
-        #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
+        #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
         #[yaserde()]
         pub struct LinkType {
             #[yaserde(rename = "predecessor")]
@@ -156,7 +156,7 @@ pub mod open_drive {
         pub mod link_type {
             use super::*;
 
-            #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
+            #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
             #[yaserde()]
             pub struct PredecessorType {
                 #[yaserde(attribute, rename = "elementType")]
@@ -170,7 +170,7 @@ pub mod open_drive {
             }
 
             impl Validate for PredecessorType {}
-            #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
+            #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
             #[yaserde()]
             pub struct SuccessorType {
                 #[yaserde(attribute, rename = "elementType")]
@@ -184,7 +184,7 @@ pub mod open_drive {
             }
 
             impl Validate for SuccessorType {}
-            #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
+            #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
             #[yaserde()]
             pub struct NeighborType {
                 #[yaserde(attribute, rename = "side")]
@@ -249,7 +249,7 @@ pub mod open_drive {
         pub mod plan_view_type {
             use super::*;
 
-            #[derive(PartialEq, Debug, YaSerialize, YaDeserialize)]
+            #[derive(PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
             #[yaserde()]
             pub enum GeometryChoice {
                 #[yaserde(rename = "line")]
@@ -281,7 +281,7 @@ pub mod open_drive {
             }
 
             impl Validate for GeometryChoice {}
-            #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
+            #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
             pub struct ParamPoly3 {}
 
             impl Validate for ParamPoly3 {}
@@ -407,7 +407,7 @@ pub mod open_drive {
             }
 
             impl Validate for SuperelevationType {}
-            #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
+            #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
             #[yaserde()]
             pub struct CrossfallType {
                 #[yaserde(rename = "userData")]
@@ -729,7 +729,7 @@ pub mod open_drive {
                 }
 
                 impl Validate for RepeatType {}
-                #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
+                #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
                 #[yaserde()]
                 pub struct OutlineType {
                     #[yaserde(rename = "outlineChoice")]
@@ -741,7 +741,7 @@ pub mod open_drive {
                 pub mod outline_type {
                     use super::*;
 
-                    #[derive(PartialEq, Debug, YaSerialize, YaDeserialize)]
+                    #[derive(PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
                     #[yaserde()]
 
                     pub enum OutlineChoice {
@@ -981,7 +981,7 @@ pub mod open_drive {
             pub mod signal_type {
                 use super::*;
 
-                #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
+                #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
                 #[yaserde()]
                 pub struct DependencyType {
                     #[yaserde(rename = "userData")]
@@ -1028,7 +1028,7 @@ pub mod open_drive {
             impl Validate for SignalReferenceType {}
         }
 
-        #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
+        #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
         #[yaserde()]
         pub struct SurfaceType {
             #[yaserde(rename = "CRG")]
@@ -1046,7 +1046,7 @@ pub mod open_drive {
         pub mod surface_type {
             use super::*;
 
-            #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
+            #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
             #[yaserde()]
             pub struct Crgtype {
                 #[yaserde(rename = "userData")]
@@ -1092,7 +1092,7 @@ pub mod open_drive {
             impl Validate for Crgtype {}
         }
 
-        #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
+        #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
         #[yaserde()]
         pub struct RailroadType {
             #[yaserde(rename = "switch")]
@@ -1110,7 +1110,7 @@ pub mod open_drive {
         pub mod railroad_type {
             use super::*;
 
-            #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
+            #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
             #[yaserde()]
             pub struct SwitchType {
                 #[yaserde(rename = "mainTrack")]
@@ -1143,7 +1143,7 @@ pub mod open_drive {
             pub mod switch_type {
                 use super::*;
 
-                #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
+                #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
                 #[yaserde()]
                 pub struct MainTrackType {
                     #[yaserde(attribute, rename = "id")]
@@ -1157,7 +1157,7 @@ pub mod open_drive {
                 }
 
                 impl Validate for MainTrackType {}
-                #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
+                #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
                 #[yaserde()]
                 pub struct SideTrackType {
                     #[yaserde(attribute, rename = "id")]
@@ -1171,7 +1171,7 @@ pub mod open_drive {
                 }
 
                 impl Validate for SideTrackType {}
-                #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
+                #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
                 #[yaserde()]
                 pub struct PartnerType {
                     #[yaserde(attribute, rename = "name")]
@@ -1186,7 +1186,7 @@ pub mod open_drive {
         }
     }
 
-    #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
+    #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
     #[yaserde()]
     pub struct ControllerType {
         #[yaserde(rename = "control")]
@@ -1213,7 +1213,7 @@ pub mod open_drive {
     pub mod controller_type {
         use super::*;
 
-        #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
+        #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
         #[yaserde()]
         pub struct ControlType {
             #[yaserde(rename = "userData")]
@@ -1232,7 +1232,7 @@ pub mod open_drive {
         impl Validate for ControlType {}
     }
 
-    #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
+    #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
     #[yaserde()]
     pub struct JunctionType {
         #[yaserde(rename = "connection")]
@@ -1262,7 +1262,7 @@ pub mod open_drive {
     pub mod junction_type {
         use super::*;
 
-        #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
+        #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
         #[yaserde()]
         pub struct ConnectionType {
             #[yaserde(rename = "laneLink")]
@@ -1292,7 +1292,7 @@ pub mod open_drive {
         pub mod connection_type {
             use super::*;
 
-            #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
+            #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
             #[yaserde()]
             pub struct LaneLinkType {
                 #[yaserde(rename = "userData")]
@@ -1311,7 +1311,7 @@ pub mod open_drive {
             impl Validate for LaneLinkType {}
         }
 
-        #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
+        #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
         #[yaserde()]
         pub struct PriorityType {
             #[yaserde(rename = "userData")]
@@ -1328,7 +1328,7 @@ pub mod open_drive {
         }
 
         impl Validate for PriorityType {}
-        #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
+        #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
         #[yaserde()]
         pub struct ControllerType {
             #[yaserde(rename = "userData")]
@@ -1350,7 +1350,7 @@ pub mod open_drive {
         impl Validate for ControllerType {}
     }
 
-    #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
+    #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
     #[yaserde()]
     pub struct JunctionGroupType {
         #[yaserde(rename = "junctionReference")]
@@ -1377,7 +1377,7 @@ pub mod open_drive {
     pub mod junction_group_type {
         use super::*;
 
-        #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
+        #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
         #[yaserde()]
         pub struct JunctionReferenceType {
             #[yaserde(attribute, rename = "junction")]
@@ -1387,7 +1387,7 @@ pub mod open_drive {
         impl Validate for JunctionReferenceType {}
     }
 
-    #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
+    #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
     #[yaserde()]
     pub struct StationType {
         #[yaserde(rename = "platform")]
@@ -1414,7 +1414,7 @@ pub mod open_drive {
     pub mod station_type {
         use super::*;
 
-        #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
+        #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
         #[yaserde()]
         pub struct PlatformType {
             #[yaserde(rename = "segment")]
@@ -1432,7 +1432,7 @@ pub mod open_drive {
         pub mod platform_type {
             use super::*;
 
-            #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
+            #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
             #[yaserde()]
             pub struct SegmentType {
                 #[yaserde(rename = "userData")]
@@ -1459,7 +1459,7 @@ pub mod open_drive {
     }
 }
 
-#[derive(PartialEq, Debug, YaSerialize, YaDeserialize)]
+#[derive(PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde()]
 
 pub enum ElementType {
@@ -1493,7 +1493,7 @@ impl Default for Max {
 
 impl Validate for Max {}
 
-#[derive(Default, PartialEq, Debug, UtilsTupleIo, UtilsDefaultSerde)]
+#[derive(Default, PartialEq, Eq, Debug, UtilsTupleIo, UtilsDefaultSerde)]
 pub struct EnumCaseType0(pub String);
 
 impl Validate for EnumCaseType0 {}
@@ -1510,7 +1510,7 @@ impl Validate for EnumCaseType1 {
     }
 }
 
-#[derive(PartialEq, Debug, YaSerialize, YaDeserialize)]
+#[derive(PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde()]
 
 pub enum ContactPoint {
@@ -1529,7 +1529,7 @@ impl Default for ContactPoint {
 
 impl Validate for ContactPoint {}
 
-#[derive(PartialEq, Debug, YaSerialize, YaDeserialize)]
+#[derive(PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde()]
 
 pub enum Side {
@@ -1548,7 +1548,7 @@ impl Default for Side {
 
 impl Validate for Side {}
 
-#[derive(PartialEq, Debug, YaSerialize, YaDeserialize)]
+#[derive(PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde()]
 
 pub enum Direction {
@@ -1567,7 +1567,7 @@ impl Default for Direction {
 
 impl Validate for Direction {}
 
-#[derive(PartialEq, Debug, YaSerialize, YaDeserialize)]
+#[derive(PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde()]
 
 pub enum RoadType {
@@ -1596,11 +1596,11 @@ impl Default for RoadType {
 
 impl Validate for RoadType {}
 
-#[derive(Default, PartialEq, Debug, UtilsTupleIo, UtilsDefaultSerde)]
+#[derive(Default, PartialEq, Eq, Debug, UtilsTupleIo, UtilsDefaultSerde)]
 pub struct Unit(pub String);
 
 impl Validate for Unit {}
-#[derive(PartialEq, Debug, YaSerialize, YaDeserialize)]
+#[derive(PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde()]
 
 pub enum Prange {
@@ -1619,7 +1619,7 @@ impl Default for Prange {
 
 impl Validate for Prange {}
 
-#[derive(PartialEq, Debug, YaSerialize, YaDeserialize)]
+#[derive(PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde()]
 
 pub enum CrossfallSide {
@@ -1640,7 +1640,7 @@ impl Default for CrossfallSide {
 
 impl Validate for CrossfallSide {}
 
-#[derive(PartialEq, Debug, YaSerialize, YaDeserialize)]
+#[derive(PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde()]
 
 pub enum SingleSide {
@@ -1659,7 +1659,7 @@ impl Default for SingleSide {
 
 impl Validate for SingleSide {}
 
-#[derive(PartialEq, Debug, YaSerialize, YaDeserialize)]
+#[derive(PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde()]
 
 pub enum LaneType {
@@ -1716,11 +1716,11 @@ impl Default for LaneType {
 
 impl Validate for LaneType {}
 
-#[derive(Default, PartialEq, Debug, UtilsTupleIo, UtilsDefaultSerde)]
+#[derive(Default, PartialEq, Eq, Debug, UtilsTupleIo, UtilsDefaultSerde)]
 pub struct RoadmarkType(pub String);
 
 impl Validate for RoadmarkType {}
-#[derive(PartialEq, Debug, YaSerialize, YaDeserialize)]
+#[derive(PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde()]
 
 pub enum Weight {
@@ -1739,7 +1739,7 @@ impl Default for Weight {
 
 impl Validate for Weight {}
 
-#[derive(PartialEq, Debug, YaSerialize, YaDeserialize)]
+#[derive(PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde()]
 
 pub enum Color {
@@ -1766,11 +1766,11 @@ impl Default for Color {
 
 impl Validate for Color {}
 
-#[derive(Default, PartialEq, Debug, UtilsTupleIo, UtilsDefaultSerde)]
+#[derive(Default, PartialEq, Eq, Debug, UtilsTupleIo, UtilsDefaultSerde)]
 pub struct Restriction(pub String);
 
 impl Validate for Restriction {}
-#[derive(PartialEq, Debug, YaSerialize, YaDeserialize)]
+#[derive(PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde()]
 
 pub enum LaneChange {
@@ -1793,15 +1793,15 @@ impl Default for LaneChange {
 
 impl Validate for LaneChange {}
 
-#[derive(Default, PartialEq, Debug, UtilsTupleIo, UtilsDefaultSerde)]
+#[derive(Default, PartialEq, Eq, Debug, UtilsTupleIo, UtilsDefaultSerde)]
 pub struct Rule(pub String);
 
 impl Validate for Rule {}
-#[derive(Default, PartialEq, Debug, UtilsTupleIo, UtilsDefaultSerde)]
+#[derive(Default, PartialEq, Eq, Debug, UtilsTupleIo, UtilsDefaultSerde)]
 pub struct Orientation(pub String);
 
 impl Validate for Orientation {}
-#[derive(PartialEq, Debug, YaSerialize, YaDeserialize)]
+#[derive(PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde()]
 
 pub enum TunnelEnum {
@@ -1820,7 +1820,7 @@ impl Default for TunnelEnum {
 
 impl Validate for TunnelEnum {}
 
-#[derive(PartialEq, Debug, YaSerialize, YaDeserialize)]
+#[derive(PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde()]
 
 pub enum BridgeEnum {
@@ -1843,7 +1843,7 @@ impl Default for BridgeEnum {
 
 impl Validate for BridgeEnum {}
 
-#[derive(PartialEq, Debug, YaSerialize, YaDeserialize)]
+#[derive(PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde()]
 
 pub enum Access {
@@ -1874,7 +1874,7 @@ impl Default for Access {
 
 impl Validate for Access {}
 
-#[derive(PartialEq, Debug, YaSerialize, YaDeserialize)]
+#[derive(PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde()]
 
 pub enum ParkingSpacemarkingSide {
@@ -1897,7 +1897,7 @@ impl Default for ParkingSpacemarkingSide {
 
 impl Validate for ParkingSpacemarkingSide {}
 
-#[derive(PartialEq, Debug, YaSerialize, YaDeserialize)]
+#[derive(PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde()]
 
 pub enum Dynamic {
@@ -1916,7 +1916,7 @@ impl Default for Dynamic {
 
 impl Validate for Dynamic {}
 
-#[derive(PartialEq, Debug, YaSerialize, YaDeserialize)]
+#[derive(PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde()]
 
 pub enum SurfaceOrientation {
@@ -1935,7 +1935,7 @@ impl Default for SurfaceOrientation {
 
 impl Validate for SurfaceOrientation {}
 
-#[derive(PartialEq, Debug, YaSerialize, YaDeserialize)]
+#[derive(PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde()]
 
 pub enum Mode {
@@ -1956,7 +1956,7 @@ impl Default for Mode {
 
 impl Validate for Mode {}
 
-#[derive(PartialEq, Debug, YaSerialize, YaDeserialize)]
+#[derive(PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde()]
 
 pub enum Purpose {
@@ -1975,7 +1975,7 @@ impl Default for Purpose {
 
 impl Validate for Purpose {}
 
-#[derive(PartialEq, Debug, YaSerialize, YaDeserialize)]
+#[derive(PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde()]
 
 pub enum Position {
@@ -1996,11 +1996,11 @@ impl Default for Position {
 
 impl Validate for Position {}
 
-#[derive(Default, PartialEq, Debug, UtilsTupleIo, UtilsDefaultSerde)]
+#[derive(Default, PartialEq, Eq, Debug, UtilsTupleIo, UtilsDefaultSerde)]
 pub struct Dir(pub String);
 
 impl Validate for Dir {}
-#[derive(PartialEq, Debug, YaSerialize, YaDeserialize)]
+#[derive(PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde()]
 
 pub enum JunctionGroupEnum {
@@ -2019,7 +2019,7 @@ impl Default for JunctionGroupEnum {
 
 impl Validate for JunctionGroupEnum {}
 
-#[derive(PartialEq, Debug, YaSerialize, YaDeserialize)]
+#[derive(PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde()]
 
 pub enum StationEnum {
@@ -2040,7 +2040,7 @@ impl Default for StationEnum {
 
 impl Validate for StationEnum {}
 
-#[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
+#[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde()]
 pub struct UserData {
     #[yaserde(attribute, rename = "code")]
@@ -2052,7 +2052,7 @@ pub struct UserData {
 
 impl Validate for UserData {}
 
-#[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
+#[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde()]
 pub struct Include {
     #[yaserde(attribute, rename = "file")]
@@ -2061,7 +2061,7 @@ pub struct Include {
 
 impl Validate for Include {}
 
-#[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
+#[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde()]
 pub struct LaneValidity {
     #[yaserde(rename = "userData")]
@@ -2079,7 +2079,7 @@ pub struct LaneValidity {
 
 impl Validate for LaneValidity {}
 
-#[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
+#[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde()]
 pub struct ParkingSpace {
     #[yaserde(rename = "marking")]
@@ -2103,7 +2103,7 @@ impl Validate for ParkingSpace {}
 pub mod parking_space {
     use super::*;
 
-    #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
+    #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
     #[yaserde()]
     pub struct MarkingType {
         #[yaserde(attribute, rename = "side")]
@@ -2173,7 +2173,7 @@ impl Validate for Lane {}
 pub mod lane {
     use super::*;
 
-    #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
+    #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
     #[yaserde()]
     pub struct LinkType {
         #[yaserde(rename = "predecessor")]
@@ -2194,7 +2194,7 @@ pub mod lane {
     pub mod link_type {
         use super::*;
 
-        #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
+        #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
         #[yaserde()]
         pub struct PredecessorType {
             #[yaserde(attribute, rename = "id")]
@@ -2202,7 +2202,7 @@ pub mod lane {
         }
 
         impl Validate for PredecessorType {}
-        #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
+        #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
         #[yaserde()]
         pub struct SuccessorType {
             #[yaserde(attribute, rename = "id")]
@@ -2212,7 +2212,7 @@ pub mod lane {
         impl Validate for SuccessorType {}
     }
 
-    #[derive(PartialEq, Debug, YaSerialize, YaDeserialize)]
+    #[derive(PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
     #[yaserde()]
 
     pub enum LaneChoice {
@@ -2472,7 +2472,7 @@ impl Validate for CenterLane {}
 pub mod center_lane {
     use super::*;
 
-    #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
+    #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
     #[yaserde()]
     pub struct LinkType {
         #[yaserde(rename = "predecessor")]
@@ -2493,7 +2493,7 @@ pub mod center_lane {
     pub mod link_type {
         use super::*;
 
-        #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
+        #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
         #[yaserde()]
         pub struct PredecessorType {
             #[yaserde(attribute, rename = "id")]
@@ -2501,7 +2501,7 @@ pub mod center_lane {
         }
 
         impl Validate for PredecessorType {}
-        #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
+        #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
         #[yaserde()]
         pub struct SuccessorType {
             #[yaserde(attribute, rename = "id")]
