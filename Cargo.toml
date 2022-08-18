@@ -1,0 +1,14 @@
+[package]
+name = "opendrive_rs"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+xsd-macro-utils = { git = "https://github.com/lumeohq/xsd-parser-rs" }
+xsd-types = { git = "https://github.com/lumeohq/xsd-parser-rs" }
+xsd-parser = { git = "https://github.com/lumeohq/xsd-parser-rs" }
+yaserde = "0.7"
+yaserde_derive = "0.7"
+xml-rs = "0.8"
