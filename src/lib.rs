@@ -1,6 +1,7 @@
 mod automagic;
 mod open_drive;
 
+pub use automagic::open_drive::*;
 pub use automagic::*;
 pub use open_drive::OpenDriveError;
 
