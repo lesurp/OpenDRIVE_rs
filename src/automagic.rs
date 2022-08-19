@@ -2234,6 +2234,7 @@ pub mod lane {
     #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
     #[yaserde()]
     pub struct RoadMarkType {
+        // TODO
         #[yaserde(rename = "type_2")]
         pub _type_2: road_mark_type::TypeType,
 
@@ -2514,6 +2515,7 @@ pub mod center_lane {
     #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
     #[yaserde()]
     pub struct RoadMarkType {
+        // TODO
         #[yaserde(rename = "type_2")]
         pub _type_2: road_mark_type::TypeType,
 
