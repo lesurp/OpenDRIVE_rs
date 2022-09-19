@@ -3,7 +3,7 @@ mod open_drive;
 
 // TODO: Why do I need to export this manually?
 // The wildcard appears to only export child modules...
-pub use automagic::{open_drive::RoadType, open_drive::*, Lane, LaneType, OpenDrive};
+pub use automagic::{lane, open_drive::RoadType, open_drive::*, Lane, LaneType, OpenDrive};
 pub use open_drive::OpenDriveError;
 
 #[cfg(test)]
