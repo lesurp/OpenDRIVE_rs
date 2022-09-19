@@ -2212,15 +2212,65 @@ pub mod lane {
         impl Validate for SuccessorType {}
     }
 
-    #[derive(PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
+    #[derive(PartialEq, Debug, YaSerialize, YaDeserialize)]
     #[yaserde()]
 
     pub enum LaneChoice {
         #[yaserde(rename = "width")]
-        Width,
+        Width(WidthType),
         #[yaserde(rename = "border")]
-        Border,
+        Border(BorderType),
         __Unknown__(String),
+    }
+
+    #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
+    #[yaserde()]
+    pub struct WidthType {
+        #[yaserde(rename = "userData")]
+        pub user_data: Vec<UserData>,
+
+        #[yaserde(rename = "include")]
+        pub include: Vec<Include>,
+
+        #[yaserde(attribute, rename = "sOffset")]
+        pub s_offset: Option<f64>,
+
+        #[yaserde(attribute, rename = "a")]
+        pub a: Option<f64>,
+
+        #[yaserde(attribute, rename = "b")]
+        pub b: Option<f64>,
+
+        #[yaserde(attribute, rename = "c")]
+        pub c: Option<f64>,
+
+        #[yaserde(attribute, rename = "d")]
+        pub d: Option<f64>,
+    }
+
+    #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
+    #[yaserde()]
+    pub struct BorderType {
+        #[yaserde(rename = "userData")]
+        pub user_data: Vec<UserData>,
+
+        #[yaserde(rename = "include")]
+        pub include: Vec<Include>,
+
+        #[yaserde(attribute, rename = "sOffset")]
+        pub s_offset: Option<f64>,
+
+        #[yaserde(attribute, rename = "a")]
+        pub a: Option<f64>,
+
+        #[yaserde(attribute, rename = "b")]
+        pub b: Option<f64>,
+
+        #[yaserde(attribute, rename = "c")]
+        pub c: Option<f64>,
+
+        #[yaserde(attribute, rename = "d")]
+        pub d: Option<f64>,
     }
 
     impl Default for LaneChoice {
