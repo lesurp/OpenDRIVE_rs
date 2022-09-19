@@ -2128,8 +2128,8 @@ pub struct Lane {
     #[yaserde(rename = "link")]
     pub link: lane::LinkType,
 
-    #[yaserde(rename = "laneChoice")]
-    pub lane_choice: lane::LaneChoice,
+    #[yaserde(rename = "width")]
+    pub width: Option<lane::WidthType>,
 
     #[yaserde(rename = "roadMark")]
     pub road_mark: Vec<lane::RoadMarkType>,
