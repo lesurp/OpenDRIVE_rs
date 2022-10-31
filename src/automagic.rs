@@ -31,7 +31,7 @@ impl Validate for OpenDrive {}
 pub mod open_drive {
     use super::*;
 
-    #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
+    #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
     #[yaserde()]
     pub struct HeaderType {
         #[yaserde(rename = "geoReference")]
@@ -2103,7 +2103,7 @@ impl Validate for ParkingSpace {}
 pub mod parking_space {
     use super::*;
 
-    #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
+    #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
     #[yaserde()]
     pub struct MarkingType {
         #[yaserde(attribute, rename = "side")]
