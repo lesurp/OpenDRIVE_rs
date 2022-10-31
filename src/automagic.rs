@@ -407,7 +407,7 @@ pub mod open_drive {
             }
 
             impl Validate for SuperelevationType {}
-            #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
+            #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
             #[yaserde()]
             pub struct CrossfallType {
                 #[yaserde(rename = "userData")]
@@ -1028,7 +1028,7 @@ pub mod open_drive {
             impl Validate for SignalReferenceType {}
         }
 
-        #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
+        #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
         #[yaserde()]
         pub struct SurfaceType {
             #[yaserde(rename = "CRG")]
@@ -1046,7 +1046,7 @@ pub mod open_drive {
         pub mod surface_type {
             use super::*;
 
-            #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
+            #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
             #[yaserde()]
             pub struct Crgtype {
                 #[yaserde(rename = "userData")]
@@ -1092,7 +1092,7 @@ pub mod open_drive {
             impl Validate for Crgtype {}
         }
 
-        #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
+        #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
         #[yaserde()]
         pub struct RailroadType {
             #[yaserde(rename = "switch")]
@@ -1110,7 +1110,7 @@ pub mod open_drive {
         pub mod railroad_type {
             use super::*;
 
-            #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
+            #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
             #[yaserde()]
             pub struct SwitchType {
                 #[yaserde(rename = "mainTrack")]
@@ -1143,7 +1143,7 @@ pub mod open_drive {
             pub mod switch_type {
                 use super::*;
 
-                #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
+                #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
                 #[yaserde()]
                 pub struct MainTrackType {
                     #[yaserde(attribute, rename = "id")]
@@ -1157,7 +1157,7 @@ pub mod open_drive {
                 }
 
                 impl Validate for MainTrackType {}
-                #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
+                #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
                 #[yaserde()]
                 pub struct SideTrackType {
                     #[yaserde(attribute, rename = "id")]
@@ -1387,7 +1387,7 @@ pub mod open_drive {
         impl Validate for JunctionReferenceType {}
     }
 
-    #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
+    #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
     #[yaserde()]
     pub struct StationType {
         #[yaserde(rename = "platform")]
@@ -1414,7 +1414,7 @@ pub mod open_drive {
     pub mod station_type {
         use super::*;
 
-        #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
+        #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
         #[yaserde()]
         pub struct PlatformType {
             #[yaserde(rename = "segment")]
@@ -1432,7 +1432,7 @@ pub mod open_drive {
         pub mod platform_type {
             use super::*;
 
-            #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
+            #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
             #[yaserde()]
             pub struct SegmentType {
                 #[yaserde(rename = "userData")]
@@ -2079,7 +2079,7 @@ pub struct LaneValidity {
 
 impl Validate for LaneValidity {}
 
-#[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
+#[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde()]
 pub struct ParkingSpace {
     #[yaserde(rename = "marking")]
