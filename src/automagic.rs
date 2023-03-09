@@ -6,6 +6,11 @@ use yaserde_derive::{YaDeserialize, YaSerialize};
 
 #[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
 #[yaserde()]
+pub struct Dummy {}
+impl Validate for Dummy {}
+
+#[derive(Default, PartialEq, Debug, YaSerialize, YaDeserialize)]
+#[yaserde()]
 pub struct OpenDrive {
     #[yaserde(rename = "header")]
     pub header: open_drive::HeaderType,
@@ -249,18 +254,18 @@ pub mod open_drive {
         pub mod plan_view_type {
             use super::*;
 
-            #[derive(PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
+            #[derive(PartialEq, Debug, YaSerialize, YaDeserialize)]
             #[yaserde()]
             pub enum GeometryChoice {
                 #[yaserde(rename = "line")]
                 // TODO: add stuff for line
-                Line,
+                Line(Dummy),
                 #[yaserde(rename = "spiral")]
                 // TODO: add stuff for spiral
                 Spiral,
                 #[yaserde(rename = "arc")]
                 // TODO: add stuff for arc
-                Arc,
+                Arc(Arc),
                 #[yaserde(rename = "poly3")]
                 // TODO: add stuff for poly3
                 Poly3,
@@ -279,8 +284,16 @@ pub mod open_drive {
                     Self::__Unknown__("No valid variants".into())
                 }
             }
-
             impl Validate for GeometryChoice {}
+
+            #[derive(PartialEq, Debug, YaSerialize, YaDeserialize)]
+            #[yaserde()]
+            pub struct Arc {
+                #[yaserde(attribute)]
+                pub curvature: f64,
+            }
+            impl Validate for Arc {}
+
             #[derive(Default, PartialEq, Eq, Debug, YaSerialize, YaDeserialize)]
             pub struct ParamPoly3 {}
 
@@ -305,7 +318,10 @@ pub mod open_drive {
                 pub length: Option<f64>,
 
                 #[yaserde(child)]
-                pub geometry_choice: GeometryChoice,
+                pub line: Option<Dummy>,
+
+                #[yaserde(child)]
+                pub arc: Option<Arc>,
             }
 
             impl Validate for Geometry {}
